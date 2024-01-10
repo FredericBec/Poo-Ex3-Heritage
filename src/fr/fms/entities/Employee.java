@@ -43,15 +43,17 @@ public class Employee extends Person{
 	}
 
 	public void setSalary(double salary) {
-		if(salary < 0) {
-			System.out.println("Le salaire ne peut être négatif");
+		//test si le salaire saisi est 0 avec valeur minimun
+		if(salary <= 0) {
+			System.out.println("Le salaire ne peut être inférieur à 0");
+			this.salary = 1100.0;
 		}else this.salary = salary;
 		
 	}
 	
 	@Override
 	public String toString() {
-		return super.toString() + ", " + BornCity + ", Entreprise : " + company + ", " + (salary != 0 ? salary + ", " : "");
+		return super.toString() + ", " + BornCity + ", Entreprise : " + company + ", " + salary;
 	}
 	
 }
