@@ -19,7 +19,7 @@ public class Capital extends City {
 
 	@Override
 	public String toString() {
-		return super.toString() + ", " + "monument : " + monument ;
+		return "Ville de naissance : " + super.toString() + ", " + "monument : " + monument ;
 	}
 	
 	

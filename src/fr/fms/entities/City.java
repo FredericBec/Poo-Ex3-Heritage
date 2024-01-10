@@ -7,9 +7,9 @@ public class City {
 	private int residentNumber;
 	
 	public City(String cityName, String country, int residentNumber) {
-		this.cityName = cityName;
-		this.country = country;
-		this.residentNumber = residentNumber;
+		setCityName(cityName);
+		setCountry(country);
+		setResidentNumber(residentNumber);
 	}
 
 	public String getCityName() {
@@ -33,7 +33,11 @@ public class City {
 	}
 
 	public void setResidentNumber(int residentNumber) {
-		this.residentNumber = residentNumber;
+		if(residentNumber < 0) {
+			System.out.println("Le nombre d'habitant ne peut être négatif");
+		}else {			
+			this.residentNumber = residentNumber;
+		}
 	}
 
 	@Override
