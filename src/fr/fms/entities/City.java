@@ -39,11 +39,17 @@ public class City {
 			this.residentNumber = residentNumber;
 		}
 	}
+	
+	@Override
+	public String toString() {
+		return cityName + ", " + country;
+	}
 
+	//méthode toString avec la population
+	/*
 	@Override
 	public String toString() {
 		return  cityName + ", " + country + ", " + residentNumber + " d'habitants";
 	}
-	
-	
+	*/
 }

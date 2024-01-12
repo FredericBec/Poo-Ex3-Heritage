@@ -2,13 +2,15 @@ package fr.fms.entities;
 
 public class Employee extends Person{
 
-	Object BornCity;
+	private static final double wageCosts = 0.20;
+	
+	Object bornCity;
 	private String company;
 	private double salary;
 	
 	public Employee(String name, String firstName, int age, String address, Object bornCity, String company, double salary) {
 		super(name, firstName, age, address);
-		this.BornCity = bornCity;
+		this.bornCity = bornCity;
 		setCompany(company);
 		setSalary(salary);
 	}
@@ -22,11 +24,11 @@ public class Employee extends Person{
 
 
 	public Object getBornCity() {
-		return BornCity;
+		return bornCity;
 	}
 
 	public void setBornCity(Object bornCity) {
-		BornCity = bornCity;
+		this.bornCity = bornCity;
 	}
 
 
@@ -52,8 +54,15 @@ public class Employee extends Person{
 	}
 	
 	@Override
+	public double remuneration() {
+		
+		return salary -= salary * wageCosts;
+		
+	}
+	
+	@Override
 	public String toString() {
-		return super.toString() + ", " + BornCity + ", Entreprise : " + company + ", " + salary;
+		return super.toString() + ", " + bornCity + ", Entreprise : " + company + ", " + salary;
 	}
 	
 }

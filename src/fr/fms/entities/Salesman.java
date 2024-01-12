@@ -1,27 +1,29 @@
 package fr.fms.entities;
 
+
 public class Salesman extends Person{
+	private static final double turnover = 50000.0;
 	
-	Object BornCity;
+	Object bornCity;
 	private String company;
-	private double percentageCA;
+	private double percentageTurnover;
 	
 	public Salesman(String name, String firstName, int age, String address, Object bornCity, String company,
-			double percentageCA) {
+			double percentageTurnover) {
 		super(name, firstName, age, address);
 		setBornCity(bornCity);
 		setCompany(company);
-		setPercentageCA(percentageCA);
+		setPercentageTurnover(percentageTurnover);
 	}
 	
 
 	public Object getBornCity() {
-		return BornCity;
+		return bornCity;
 	}
 
 
 	public void setBornCity(Object bornCity) {
-		BornCity = bornCity;
+		this.bornCity = bornCity;
 	}
 
 
@@ -35,21 +37,28 @@ public class Salesman extends Person{
 	}
 
 
-	public double getPercentageCA() {
-		return percentageCA;
+	public double getPercentageTurnover() {
+		return percentageTurnover;
 	}
 
-	public void setPercentageCA(double percentageCA) {
-		if(percentageCA <= 0) {
+	public void setPercentageTurnover(double percentageTurnover) {
+		if(percentageTurnover <= 0) {
 			System.out.println("Le pourcentage du chiffre d'affaire ne peut être inférieur à 0");
-			this.percentageCA = 1.0;
+			this.percentageTurnover = 1.0;
 		}else
-		this.percentageCA = percentageCA;
+		this.percentageTurnover = percentageTurnover;
+	}
+	
+	@Override
+	public double remuneration() {
+		
+		return percentageTurnover *= turnover/100;
+
 	}
 
 	@Override
 	public String toString() {
-		return super.toString() + ", " + "% CA : " + percentageCA;
+		return super.toString() + ", " + bornCity + ", Entreprise : " + company + ", " + "% CA : " + percentageTurnover;
 	}
 
 	

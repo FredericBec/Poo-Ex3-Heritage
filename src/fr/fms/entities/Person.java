@@ -1,6 +1,6 @@
 package fr.fms.entities;
 
-public class Person {
+public abstract class Person {
 	
 	private String name;
 	private String firstName;
@@ -45,6 +45,8 @@ public class Person {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
+	public abstract double remuneration();
 
 	@Override
 	public String toString() {

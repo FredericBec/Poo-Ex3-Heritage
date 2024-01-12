@@ -20,6 +20,5 @@ public class TestEmployee {
 		System.out.println(johnson);
 		System.out.println(dupont);
 		
-		System.out.println();
 	}
 }
